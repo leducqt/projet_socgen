@@ -1,0 +1,48 @@
+﻿<Window x:Class="socgen_taux.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Saissie des taux" Height="299.028" Width="636.507">
+
+    <Grid Margin="2,0,0,-88.5" HorizontalAlignment="Left" Width="629" Height="360" VerticalAlignment="Top" Background="AliceBlue" RenderTransformOrigin="0.5,0.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="281*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="88*"/>
+        </Grid.RowDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.091"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="178"><Run Text="Rentrez les taux spots et forwards pour les différentes maturités ci-dessous."/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Taux 3 mois :"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="101,88,0,0" TextWrapping="Wrap" Text="{Binding R3}" VerticalAlignment="Top" Width="120"  />
+        <Button Command="{Binding simulationCommand}" Content="Construire la courbe" HorizontalAlignment="Left" Margin="54,195,0,0" VerticalAlignment="Top" Width="199" Height="59"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Taux "/><Run Text="6 "/><Run Text="mois :"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Taux "/><Run Text="9"/><Run Text=" mois :"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="101,118,0,0" TextWrapping="Wrap" Text="{Binding R6}" VerticalAlignment="Top" Width="120"  />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="101,148,0,0" TextWrapping="Wrap" Text="{Binding R9}" VerticalAlignment="Top" Width="120"  />
+        <TextBlock HorizontalAlignment="Left" Margin="226,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="13" Height="23"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="226,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="13" Height="23"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="226,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="13" Height="23"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="366,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Taux 3x6 mois :"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="457,88,0,0" TextWrapping="Wrap" Text="{Binding R6F}" VerticalAlignment="Top" Width="120"  />
+        <TextBlock HorizontalAlignment="Left" Margin="366,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Taux "/><Run Text="3x9 "/><Run Text="mois :"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="366,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Height="23"><Run Text="Taux "/><Run Text="3x12"/><Run Text=" mois :"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="457,118,0,0" TextWrapping="Wrap" Text="{Binding R9F}" VerticalAlignment="Top" Width="120"  />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="457,148,0,0" TextWrapping="Wrap" Text="{Binding R12F}" VerticalAlignment="Top" Width="120"  />
+        <TextBlock HorizontalAlignment="Left" Margin="582,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="13" Height="23"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="582,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="13" Height="23"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="582,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="13" Height="23"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="366,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Taux 3 mois :"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="457,60,0,0" TextWrapping="Wrap" Text="{Binding R3F}" VerticalAlignment="Top" Width="120"  />
+        <TextBlock HorizontalAlignment="Left" Margin="582,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="13" Height="23"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+        <Button Command="{Binding simulationForwardCommand}" Content="Construire la courbe" HorizontalAlignment="Left" Margin="378,195,0,0" VerticalAlignment="Top" Width="199" Height="59"/>
+    </Grid>
+</Window>

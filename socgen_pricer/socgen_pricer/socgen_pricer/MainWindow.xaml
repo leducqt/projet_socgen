@@ -1,0 +1,71 @@
+﻿<Window x:Class="socgen_pricer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Pricer" Height="561.028" Width="817.257">
+
+    <Grid Margin="2,0,2.5,-104.5" Height="538" VerticalAlignment="Top" Background="White" RenderTransformOrigin="0.5,0.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="154*"/>
+            <RowDefinition Height="135*"/>
+            <RowDefinition Height="147*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.091"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Nominal"/><Run Text=" :"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,37,0,0" TextWrapping="Wrap" Text="{Binding NominalB}" VerticalAlignment="Top" Width="120"  />
+        <Button Command="{Binding pricingB}" Content="Pricer" HorizontalAlignment="Left" Margin="503,56,0,0" VerticalAlignment="Top" Width="132" Height="44"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23"><Run Text="Taux coupon"/><Run Text=" : "/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="36"><Run Text="Nb "/><Run Text="de coupon par an:"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,70,0,0" TextWrapping="Wrap" Text="{Binding TauxCouponB}" VerticalAlignment="Top" Width="120"  />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,104,0,0" TextWrapping="Wrap" Text="{Binding NbCouponB}" VerticalAlignment="Top" Width="120"  />
+        <TextBlock HorizontalAlignment="Left" Margin="254,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="30"><Run Text="Taux d'actualisation "/><Run Text=":"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="345,76,0,0" TextWrapping="Wrap" Text="{Binding RB}" VerticalAlignment="Top" Width="120"  />
+        <TextBlock HorizontalAlignment="Left" Margin="657,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Height="44"><Run Text="{Binding PriceB}"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="254,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23" Text="Nb de période : "/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="345,37,0,0" TextWrapping="Wrap" Text="{Binding NbPeriodB}" VerticalAlignment="Top" Width="120"  />
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="22" FontSize="20" Text="Bonds"/>
+        <TextBlock HorizontalAlignment="Left" Margin="744,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="23" Text="€"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23" Text="Spot : " Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,42,0,0" TextWrapping="Wrap" Text="{Binding SpotF}" VerticalAlignment="Top" Width="120" Grid.Row="1"  />
+        <Button Command="{Binding pricingF}" Content="Pricer" HorizontalAlignment="Left" Margin="503,42,0,0" VerticalAlignment="Top" Width="132" Height="44" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="39" Grid.Row="1"><Run Text="Taux d'actualisation"/><Run Text=" "/><Run Text=": "/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,81,0,0" TextWrapping="Wrap" Text="{Binding RF}" VerticalAlignment="Top" Width="120" Grid.Row="1"  />
+        <TextBlock HorizontalAlignment="Left" Margin="657,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Height="30" Grid.Row="1"><Run Text="{Binding PriceF}"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="254,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="37" Text="Durée jusqu'à échéance :" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="345,48,0,0" TextWrapping="Wrap" Text="{Binding MaturityF}" VerticalAlignment="Top" Width="120" Grid.Row="1"  />
+        <TextBlock HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="22" FontSize="20" Text="Future" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="744,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="23" Text="€" Grid.Row="1"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23" Text="Spot :" Grid.Row="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,42,0,0" TextWrapping="Wrap" Text="{Binding SpotO}" VerticalAlignment="Top" Width="120" Grid.Row="2"  />
+        <Button Command="{Binding pricingO}" Content="Pricer" HorizontalAlignment="Left" Margin="503,61,0,0" VerticalAlignment="Top" Width="132" Height="44" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="23" Text="Strike :" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="36" Grid.Row="2"><Run Text="Taux d'actualisation :"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,75,0,0" TextWrapping="Wrap" Text="{Binding StrikeO}" VerticalAlignment="Top" Width="120" Grid.Row="2"  />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,113,0,0" TextWrapping="Wrap" Text="{Binding RO}" VerticalAlignment="Top" Width="120" Grid.Row="2"  />
+        <TextBlock HorizontalAlignment="Left" Margin="254,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="30" Text="Volatilité :" Grid.Row="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="345,79,0,0" TextWrapping="Wrap" Text="{Binding VolO}" VerticalAlignment="Top" Width="120" Grid.Row="2"  />
+        <TextBlock HorizontalAlignment="Left" Margin="685,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="23" Grid.Row="2"><Run Text="{Binding PriceC}"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="254,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="33" Text="Durée jusqu'à maturité :" Grid.Row="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="345,42,0,0" TextWrapping="Wrap" Text="{Binding MaturityO}" VerticalAlignment="Top" Width="120" Grid.Row="2"  />
+        <TextBlock HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Height="22" FontSize="20" Text="Call &amp; Put" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="728,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="23" Text="€" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="685,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="23" Grid.Row="2"><Run Text="{Binding PriceP}"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="728,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="23" Text="€" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="657,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="2"><Run Text="Call"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="657,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="18" Height="23" Grid.Row="2"><Run Text="Put"/><LineBreak/><Run/></TextBlock>
+    </Grid>
+</Window>
